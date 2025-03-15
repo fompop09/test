@@ -1,0 +1,199 @@
+DOCTYPE html>
+  <html>
+    <head>
+    <base target="_top">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <style type='text/css'>
+        .prompt {
+            font-family: 'Prompt', sans-serif;
+        }
+        body {
+            font-family: 'Prompt' !important;
+        }
+        .form-error{color: #D8000C;
+    </style>
+    </head>
+
+    <body>
+   
+   <div class = "container">
+   <nav class = teal>
+    <div  class="nav-wrapper">
+      <a href="#" class="brand-logo center">โรงพยาบาลอภิวัฒน์สอนสร้างสื่อ</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><img src="https://drive.google.com/uc?id=1JOK1AJmO6IvcUjuNvJ6YabcbDNDAwQGO" weight="60" height="60"></li>
+
+      </ul>
+    </div>
+  </nav>
+   <div class="row">
+
+        <div class="row">
+            <h5 class="center-align teal-text">ฟอร์มบันทึกผู้ประสงค์ฉีดวัคซีน covid-19 </h5>
+        </div>
+
+<!-- กรอกข้อมูล -->
+       <form id="myForm" >
+
+        <div class="input-field col s6">
+          <i class="material-icons prefix">portrait</i>
+          <input id="cid" type="text" data-length="13" class="validate" required>
+          <label for="cid">หมายเลขบัตรประชาชน 13 หลัก [ไม่มีขีด"-" หรือไม่มีช่องว่าง]</label>
+          
+
+        </div>
+
+  <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="username" type="text" class="validate" required>
+          <label for="username">ชื่อ สกุล [ไม่มีคำนำหน้าชื่อ]</label>
+
+        </div>
+  
+       
+       <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="telephone" type="text" class="validate" required>
+          <label for="telephone">เบอร์โทร</label>
+          
+        </div><!-- ปิดแทก row ชื่อ สกุลเบอร์โทร -->
+
+         <div class="row">
+         <div class="input-field col s6">
+         <i class="material-icons prefix">date_range</i>
+         <input type="date" id="birthday" class="validate" required>
+         <label for="birthday">เลือกวันเดือนปีเกิด</label>
+         
+        </div>
+      </div><!-- ปิดแทก row วันเดือนปีเกิด -->
+
+  <div class="row">
+      <div class="input-field col s6">
+      <i class="material-icons prefix">face</i>
+        <select id = "sex" class="validate" required>
+          <option value="" disabled selected>เพศ</option>
+          <option value="ชาย">ชาย</option>
+          <option value="หญิง">หญิง</option>
+          </select>
+        <label>กรุณาเลือกเพศ</label>
+    </div>
+    </div><!-- ปิดแทก row เลือกเพศ-->
+   
+   
+   <div class="row">
+   <div class="input-field col s6">
+     <i class="material-icons prefix">loupe</i>
+    <select id = "level" class="validate" required>
+      <option  value="" disabled selected>เลือกประสงค์รับวัคซีน</option>
+      <option value="0-ไม่รับ">0-ไม่รับ</option>
+      <option value="1-รับ">1-รับ</option>
+    </select>
+    <label>ความประสงค์รับ/ไม่รับวัคซีน</label>
+  </div>
+    </div><!-- ปิดแทก row เลือกประสงค์-->
+
+<div class="row">
+ <h5 class="center-align teal-text">เปิดให้บริการฉีดวัคซีน วันที่ 7 มิ.ย. 2564 - 6 ก.ค. 2564 เท่านั้น[ยกเว้น!! วันเสาร์และวันอาทิตย์]</h5>
+ </div>
+
+ <div class="row">
+  <div class="input-field col s6">
+    <i class="material-icons prefix">today</i>
+  <input type="date" id="vacdate" class="validate" required>
+  <label for="vacdate">วันที่ต้องการฉีดวัคซีน</label>
+  </div><!-- ปิดแทก row วันที่ต้องการฉีด-->
+
+  <div class="row">
+   <div class="input-field col s6">
+     <i class="material-icons prefix">alarm_on</i>
+    <select id = "timefix" class="validate" required>
+      <option  value="" disabled selected>เลือกเวลาที่ฉีด</option>
+      <option value="8:00 น.">8:00 น.</option>
+      <option value="9:00 น.">9:00 น.</option>
+      <option value="10:00 น.">10:00 น.</option>
+      <option value="11:00 น.">11:00 น.</option>
+      <option value="13:00 น.">13:00 น.</option>
+      <option value="14:00 น.">14:00 น.</option>
+      <option value="15:00 น.">15:00 น.</option>
+      <option value="16:00 น.">16:00 น.</option>
+    </select>
+    <label>กรุณาเลือกเวลาฉีด</label>
+  </div>
+    </div><!-- ปิดแทก row เลือกประสงค์-->
+
+    <div class="row">
+    <div class="input-field col s6">
+         <button  type="submit" class="btn waves-effect waves-light" id= "btn">บันทึกข้อมูล
+         <i class="material-icons right">send</i>
+         </button>
+    </div>
+  </div><!-- ปิดแทก row ปุ่มบันทึกข้อมูล-->
+          
+  </form>        
+   </div><!-- ปิดแทก container-->
+
+      <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+//Initialization materialize
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });
+    
+    var uname = document.getElementById("username")
+    var uphone = document.getElementById("telephone")
+    var ucid = document.getElementById("cid")
+    var ubirthday = document.getElementById("birthday")
+    var usex = document.getElementById("sex")
+    var ulevel = document.getElementById("level")
+    var uvacdate = document.getElementById("vacdate")
+    var utimefix = document.getElementById("timefix")
+      //  document.getElementById("btn").addEventListener("click",saveData)
+      document.getElementById("myForm").addEventListener("submit",saveData)
+        
+    function saveData(){
+      event.preventDefault()
+    var data = { 
+    name:uname.value,
+    phone:uphone.value,
+    cid:ucid.value,
+    birthday:ubirthday.value,
+    sex:usex.value,
+    level:ulevel.value,
+    vacdate:uvacdate.value,
+    timefix:utimefix.value
+    }
+    google.script.run.withSuccessHandler(success).recordData(data)
+    }
+    function success(){
+    ucid.value = ""
+    uname.value = ""
+    uphone.value = ""
+    usex.value = ""
+    uvacdate.value = ""
+    ubirthday.value = ""
+    ulevel.selectedIndex = 0
+    M.FormSelect.init(ulevel)
+    utimefix.selectedIndex = 0
+    M.FormSelect.init(utimefix)
+    Swal.fire({
+  position: 'center',
+  icon: 'success',
+  title: 'บันทึกข้อมูลของท่านเรียบร้อยแล้ว',
+  showConfirmButton: false,
+  timer: 2000
+})
+    }
+    
+$("select[required]").css({display: "block", height: 0, padding: 0, width: 0, position: 'absolute'});
+    </script>
+  
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    </body>
+  </html>
+@fompop09
+Comment
